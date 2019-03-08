@@ -13,13 +13,12 @@ public class MyLinkedList<T> {
 	}
 	
 	public void add(T data) {
-		Node<T> last = getNodeAt(size-1);
-		
 		if(head == null) {
 			head = new Node<T>(data);
 			size++;
 			return;
 		}
+		Node<T> last = getNodeAt(size-1);
 		last.nextNode = new Node<T>(data);
 		last.nextNode.previousNode = last;
 		tail = last.nextNode;
