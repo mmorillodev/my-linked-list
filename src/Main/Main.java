@@ -17,18 +17,41 @@ public class Main {
 			add(6);
 		}};
 		
+		System.out.println("--------------------------");
+		System.out.println(list.pop());
 		
+		System.out.println("--------------------------");
 		list.forEach(System.out::println);
 		
-		list.removeIf(new MyPredicate<Integer>() {
-			
-			@Override
-			public boolean filter(Integer t) {
-				if(t % 2 == 0) return false;
-				return true; 
-			}
-		});
-		System.out.println("----------------------------------");
+		System.out.println("--------------------------");
+		System.out.println(list.pop());
+		
+		System.out.println("--------------------------");
+		list.forEach(System.out::println);
+		System.out.println("--------------------------");
+		System.out.println(list.pop());
+		
+		System.out.println("--------------------------");
+		list.forEach(System.out::println);
+		System.out.println("--------------------------");
+		System.out.println(list.pop());
+		
+		System.out.println("--------------------------");
+		list.forEach(System.out::println);
+		System.out.println("--------------------------");
+		System.out.println(list.pop());
+		
+		System.out.println("--------------------------");
+		list.forEach(System.out::println);
+		System.out.println("--------------------------");
+		System.out.println(list.pop());
+		
+		System.out.println("--------------------------");
+		list.forEach(System.out::println);
+		System.out.println("--------------------------");
+		System.out.println(list.pop());
+		
+		System.out.println("--------------------------");
 		list.forEach(System.out::println);
 		
 	}
