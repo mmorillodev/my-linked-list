@@ -30,9 +30,10 @@ public class MyLinkedList<T> {
 		if(head == null) return data;
 		if(tail.previousNode != null) {
 			data = tail.data;
-			tail.previousNode.nextNode = null;
-			
 			tail = tail.previousNode;
+			
+			tail.nextNode = null;
+			
 			size--;
 		}
 		else{
