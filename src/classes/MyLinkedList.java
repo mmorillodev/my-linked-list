@@ -29,7 +29,7 @@ public class MyLinkedList<T> {
 		T data = null;
 		if(head == null) return data;
 		if(tail.previousNode != null) {
-			data = tail.previousNode.data;
+			data = tail.data;
 			tail.previousNode.nextNode = null;
 			
 			tail = tail.previousNode;
