@@ -1,9 +1,10 @@
 package classes;
 
+import interfaces.MyComparator;
 import interfaces.MyConsumer;
 import interfaces.MyPredicate;
 
-public class MyLinkedList<T> {
+public class MyLinkedList<T extends Object> {
 	private Node<T> head;
 	private Node<T> tail;
 	private int size;
@@ -100,8 +101,30 @@ public class MyLinkedList<T> {
 		return getNodeAt(position).data;
 	}
 	
+	public int search(T target) {
+		if(head == null) return -1;
+		Node<T> current = head;
+		int cont = 0;
+		
+		 while(current != null){
+			if(current.data.equals(target))
+				return cont;
+			current = current.nextNode;
+			cont ++;
+		}
+		return -1;
+	}
+	
 	public int size() {
 		return size;
+	}
+	
+	public void sort() {
+		throw new UnsupportedOperationException();
+	}
+	
+	public void sort(MyComparator<T> comparator) {
+		throw new UnsupportedOperationException();
 	}
 	
 	private Node<T> getNodeAt(int position){
@@ -115,7 +138,7 @@ public class MyLinkedList<T> {
 
 }
 
-class Node<T> {
+class Node<T extends Object> {
 	T data;
 	Node<T> nextNode;
 	Node<T> previousNode;

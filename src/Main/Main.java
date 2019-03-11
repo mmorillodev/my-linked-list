@@ -15,45 +15,11 @@ public class Main {
 			add(4);
 			add(5);
 			add(6);
+			add(7);
+			add(8);
 		}};
 		
-		System.out.println("--------------------------");
-		System.out.println(list.pop());
-		
-		System.out.println("--------------------------");
-		list.forEach(System.out::println);
-		
-		System.out.println("--------------------------");
-		System.out.println(list.pop());
-		
-		System.out.println("--------------------------");
-		list.forEach(System.out::println);
-		System.out.println("--------------------------");
-		System.out.println(list.pop());
-		
-		System.out.println("--------------------------");
-		list.forEach(System.out::println);
-		System.out.println("--------------------------");
-		System.out.println(list.pop());
-		
-		System.out.println("--------------------------");
-		list.forEach(System.out::println);
-		System.out.println("--------------------------");
-		System.out.println(list.pop());
-		
-		System.out.println("--------------------------");
-		list.forEach(System.out::println);
-		System.out.println("--------------------------");
-		System.out.println(list.pop());
-		
-		System.out.println("--------------------------");
-		list.forEach(System.out::println);
-		System.out.println("--------------------------");
-		System.out.println(list.pop());
-		
-		System.out.println("--------------------------");
-		list.forEach(System.out::println);
+		System.out.println(list.search(8));
 		
 	}
-
 }
