@@ -18,7 +18,7 @@ public class Main {
 			add(7);
 			add(8);
 		}};
-		
+		list.sort();
 		System.out.println(list.search(8));
 		
 	}

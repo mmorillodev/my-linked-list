@@ -148,7 +148,6 @@ public class MyLinkedList<T extends Object> {
 		return size;
 	}
 	
-	//TODO
 	public void sort() {
 		T aux;
 		MyComparator<T> comparator = new MyComparator<T>() {};
@@ -162,7 +161,6 @@ public class MyLinkedList<T extends Object> {
 		}
 	}
 	
-	//TODO
 	public void sort(MyComparator<T> comparator) {
 		T aux;
 		for (int i = 0; i < size; i++) {
