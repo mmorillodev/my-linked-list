@@ -1,5 +1,6 @@
 package classes;
 
+
 import interfaces.MyComparator;
 import interfaces.MyConsumer;
 import interfaces.MyPredicate;
@@ -14,7 +15,7 @@ public class MyLinkedList<T extends Object> {
 	}
 	
 	public void add(T data) {
-		if(head == null) {
+		if(isEmpty()) {
 			head = new Node<T>(data);
 			tail = head;
 			size++;
@@ -48,7 +49,7 @@ public class MyLinkedList<T extends Object> {
 	
 	public T pop() {
 		T data = null;
-		if(head == null) return data;
+		if(isEmpty()) return data;
 		if(tail.previousNode != null) {
 			data = tail.data;
 			tail = tail.previousNode;
@@ -100,7 +101,7 @@ public class MyLinkedList<T extends Object> {
 	
 	//TODO
 	public void removeAt(int position) {
-		if(head == null) return;
+		if(isEmpty()) return;
 		if(position >= size) return;
 		
 		Node<T> excluded;
@@ -130,7 +131,7 @@ public class MyLinkedList<T extends Object> {
 	}
 	
 	public int search(T target) {
-		if(head == null) return -1;
+		if(isEmpty()) return -1;
 		Node<T> current = head;
 		int cont = 0;
 		
@@ -149,12 +150,38 @@ public class MyLinkedList<T extends Object> {
 	
 	//TODO
 	public void sort() {
-		throw new UnsupportedOperationException();
+		T aux;
+		MyComparator<T> comparator = new MyComparator<T>() {};
+		for (int i = 0; i < size; i++) {
+			for (int j = 0; j < size; j++) {
+				if(i == j) continue;
+				else if(comparator.compare(get(i), get(j)) < 0){
+					swapItems(i, j);
+				}
+			}
+		}
 	}
 	
 	//TODO
 	public void sort(MyComparator<T> comparator) {
-		throw new UnsupportedOperationException();
+		T aux;
+		for (int i = 0; i < size; i++) {
+			for (int j = 0; j < size; j++) {
+				if(i == j) continue;
+				else if(comparator.compare(get(i), get(j)) < 0){
+					swapItems(i, j);
+				}
+			}
+		}
+	}
+	
+	public void swapItems(int firstPosition, int secondPosition) {
+		if(firstPosition >= size || secondPosition >= size) return;
+		if(firstPosition == secondPosition) return;
+		
+		T data = get(firstPosition);
+		getNodeAt(firstPosition).data = getNodeAt(secondPosition).data;
+		getNodeAt(secondPosition).data = data;
 	}
 	
 	public Object[] toArray() {
